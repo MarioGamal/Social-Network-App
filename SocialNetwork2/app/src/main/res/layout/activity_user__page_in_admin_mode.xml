@@ -1,0 +1,40 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical"
+    tools:context="com.example.android.socialnetwork.user_page_in_admin_mode">
+
+    <ImageView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:src = "@drawable/welcome"
+        android:layout_gravity="center_horizontal"
+        />
+
+    <Button
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Delete this user"
+        android:textColor="#d50000"
+        android:background="#757575"
+        android:layout_gravity="center_horizontal"
+        android:layout_margin="8dp"
+        android:onClick="delete_user"
+        />
+
+    <Button
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Delete content"
+        android:textAllCaps="false"
+        android:layout_gravity="center_horizontal"
+        android:layout_margin="8dp"
+        android:textColor="#d50000"
+        android:background="#757575"
+        android:onClick="delete_content"
+        />
+
+</LinearLayout>

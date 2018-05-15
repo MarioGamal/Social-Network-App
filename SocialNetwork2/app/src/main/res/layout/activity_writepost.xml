@@ -1,0 +1,31 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical"
+    tools:context="com.example.android.socialnetwork.writepost">
+
+    <EditText
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:minLines="3"
+        android:inputType="textMultiLine"
+        android:scrollbars="vertical"
+        android:layout_margin="30dp"
+        android:id="@+id/new_post"
+        />
+
+    <Button
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Post"
+        android:layout_gravity="center"
+        android:textAllCaps="false"
+        android:background="@color/colorPrimary"
+        android:textColor="#FFF"
+        android:textSize="20sp"
+        android:onClick="AddPost"/>
+
+</LinearLayout>
