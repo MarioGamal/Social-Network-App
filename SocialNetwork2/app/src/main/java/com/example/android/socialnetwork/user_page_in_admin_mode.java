@@ -84,18 +84,21 @@ public class user_page_in_admin_mode extends AppCompatActivity {
             int id_of_updated_user = Integer.valueOf(need_update[i]) ;
             String [] selecargs = {need_update[i]};
             d=sql3.query(userEntry.TABLE_NAME , projection , selection , selecargs , null,null,null) ;
-            d.moveToFirst() ;
-            int original_no_of_friends = d.getInt(d.getColumnIndex(userEntry.COULMN_number_friends)) ;
-            String original_friends = d.getString(d.getColumnIndex(userEntry.COULMN_friends)) ;
-            String updated_friends = original_friends.replace(need_update[i]+"," , "") ;
+            if(d.getCount()>0)
+            {
+                d.moveToFirst();
+                int original_no_of_friends = d.getInt(d.getColumnIndex(userEntry.COULMN_number_friends));
+                String original_friends = d.getString(d.getColumnIndex(userEntry.COULMN_friends));
+                String updated_friends = original_friends.replace(need_update[i] + ",", "");
 
-            ContentValues contentValues = new ContentValues() ;
-            contentValues.put(userEntry.COULMN_number_friends , original_no_of_friends-1);
-            contentValues.put(userEntry.COULMN_friends,updated_friends);
+                ContentValues contentValues = new ContentValues();
+                contentValues.put(userEntry.COULMN_number_friends, original_no_of_friends - 1);
+                contentValues.put(userEntry.COULMN_friends, updated_friends);
 
-            SQLiteDatabase sql4 = userHelper.getWritableDatabase();
+                SQLiteDatabase sql4 = userHelper.getWritableDatabase();
 
-            sql4.update(userEntry.TABLE_NAME , contentValues , userEntry._ID+"="+need_update[i],null);
+                sql4.update(userEntry.TABLE_NAME, contentValues, userEntry._ID + "=" + need_update[i], null);
+            }
         }
 
 

@@ -1,5 +1,7 @@
 package com.example.android.socialnetwork;
 
+import com.example.android.socialnetwork.packagefordb.UserHelper;
+
 import java.util.Comparator;
 import java.util.Vector;
 
@@ -29,6 +31,7 @@ public class post {
         id_of_the_user=-1;
         id_of_the_post=-1;
     }
+
 
     public post(String content, int no_likes, Vector<user> liked, int id_of_the_post, int id_of_the_user) {
         this.content = content;

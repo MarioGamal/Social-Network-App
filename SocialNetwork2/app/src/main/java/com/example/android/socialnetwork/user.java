@@ -12,8 +12,15 @@ public class user {
     Vector<user>friends;
     Vector<post>posts;
     int no_of_friends ;
+    int no_likes;
     public String getName() {
         return name;
+    }
+
+    public user(int id , int no_likes )
+    {
+        this._Id = id;
+        this.no_likes = no_likes;
     }
 
     public user (String name , int n , int _Id){
