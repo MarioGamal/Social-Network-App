@@ -8,6 +8,8 @@ import android.database.sqlite.SQLiteDatabase;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
 import android.view.View;
+import android.widget.Toast;
+
 import com.example.android.socialnetwork.packagefordb.UserHelper;
 import com.example.android.socialnetwork.packagefordb.usercontract.userEntry;
 
@@ -23,6 +25,26 @@ public class personal_page extends AppCompatActivity {
         setContentView(R.layout.activity_personal_page);
         this_user_id = signup.id ;
         userDb = new UserHelper(this);
+    }
+
+
+    public void unfriend(View view)
+    {
+        UserHelper userHelper = new UserHelper(this);
+        SQLiteDatabase sql = userHelper.getReadableDatabase();
+
+        String[]projection = {userEntry.COULMN_UserName,userEntry.COULMN_number_friends,userEntry.COULMN_friends,userEntry._ID};
+
+        Cursor c = sql.query(userEntry.TABLE_NAME , projection , userEntry._ID+"=?" , new String[] {String.valueOf(this_user_id)},
+                null,null,null) ;
+        c.moveToFirst();
+        int h = c.getInt(c.getColumnIndex(userEntry.COULMN_number_friends));
+        if(h > 0) {
+            Intent intent = new Intent(this, unfriend.class);
+            startActivity(intent);
+        }
+        else
+            Toast.makeText(this , "You have no friends " ,Toast.LENGTH_LONG).show();
     }
 
     /* WE will rake an integer which is the id of the user to determine

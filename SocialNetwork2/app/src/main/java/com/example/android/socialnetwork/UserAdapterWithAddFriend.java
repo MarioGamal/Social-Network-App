@@ -107,7 +107,8 @@ public class UserAdapterWithAddFriend extends ArrayAdapter<user> {
 
 
         SQLiteDatabase sql_update = userHelper.getWritableDatabase();
-        int y =sql_update.update(userEntry.TABLE_NAME , contentValues ,userEntry._ID+"="+String.valueOf(personal_page.this_user_id),null);
+        int y =sql_update.update(userEntry.TABLE_NAME ,
+                contentValues ,userEntry._ID+"="+String.valueOf(personal_page.this_user_id),null);
         if(y>0){
            Toast.makeText(getContext(),"Updated successfully !!"+no_friends_of_user+" /  "+friends2,Toast.LENGTH_LONG).show();
             /*

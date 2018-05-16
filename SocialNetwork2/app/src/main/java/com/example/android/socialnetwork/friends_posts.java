@@ -47,6 +47,7 @@ public class friends_posts extends AppCompatActivity {
         String [] selargs1  =new String[]{id_of_this_user} ;
 
         Cursor c = ins.query(usercontract.userEntry.TABLE_NAME , proj , selection1,selargs1,null,null,null ) ;
+        c.moveToFirst() ;
         String friends = c.getString(c.getColumnIndex(userEntry.COULMN_friends)) ;
 
 

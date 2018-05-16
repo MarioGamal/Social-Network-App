@@ -42,7 +42,8 @@
         <activity android:name=".search_name" />
         <activity android:name=".specific_names" />
         <activity android:name=".view_all_not_friends" />
-        <activity android:name=".last"></activity>
+        <activity android:name=".last" />
+        <activity android:name=".unfriend"></activity>
     </application>
 
 </manifest>

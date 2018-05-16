@@ -56,6 +56,17 @@
             android:textAllCaps="false"
             android:onClick="Search"
             />
+        <Button
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="Unfriend"
+            android:textAllCaps="false"
+            android:background="@color/colorPrimary"
+            android:textColor="#FFF"
+            android:textSize="20sp"
+            android:onClick="unfriend"
+            android:layout_margin="16sp"
+            />
 
         <Button
             android:layout_width="match_parent"
